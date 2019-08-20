@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-button slot="start" color="primary">
+                <ion-icon name="arrow-round-back"></ion-icon>
+            </ion-button>
+            <ion-button *ngIf="clase" (click)="confirmar" slot="end">
+                Confirmar
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding *ngIf="title">
+    <ion-title text-center> {{clase.title}} </ion-title>
+
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating"></ion-label>
+            <ion-textarea name="" id="" cols="30" #question rows="10" placeholder="Pregunta"></ion-textarea>
+        </ion-item>
+
+        <ion-button (click)="registrar(question.value)" shape="round" expand="block">Registrar</ion-button>
+    </ion-list>
+
+</ion-content>
+
+<ion-content *ngIf="people" padding>
+    <ion-list>
+
+        <ion-item>
+            <ion-row>
+                <ion-col size="10" offset="1">
+                    <img src="" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating"></ion-label>
+            <ion-input #name></ion-input>
+        </ion-item>
+
+        <ion-button (click)="registrar()" shape="round" expand="block">Registrar</ion-button>
+    </ion-list>
+</ion-content>
